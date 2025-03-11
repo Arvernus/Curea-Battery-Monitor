@@ -43,7 +43,7 @@ jobs:
       - name: Build Firmware with ESPHome Build Action
         uses: esphome/build-action@v6
         with:
-          yaml_file: curea-battery-monitor.yaml
+          configuration: curea-battery-monitor.yaml  # <-- unbedingt angeben
           complete_manifest: true
 
       - name: Create GitHub Release

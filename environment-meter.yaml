@@ -6,7 +6,7 @@ esphome:
   name_add_mac_suffix: true
 
 esp32:
-  board: esp32-s3-devkitc-1
+  board: esp32-c3-devkitm-1
   framework:
     type: esp-idf
 
@@ -27,3 +27,32 @@ wifi:
 # In combination with the `ap` this allows the user
 # to provision wifi credentials to the device.
 captive_portal:
+
+esphome:
+  name: environment-meter
+  friendly_name: Environment Meter
+  name_add_mac_suffix: true
+
+esp32:
+  board: wemos_d1_mini32
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  - platform: esphome
+
+wifi:
+  ap:
+
+captive_portal:
+
+one_wire:
+  - platform: gpio
+    pin: D2
+    

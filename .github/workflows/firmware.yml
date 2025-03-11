@@ -32,7 +32,7 @@ jobs:
         run: |
           FILE="curea-battery-monitor.yaml"
           NEW_VERSION="${{ needs.version.outputs.new_version }}"
-          # Wenn bereits eine Version-Zeile vorhanden ist, diese ersetzen – ansonsten nach "esphome:" einfügen.
+          # Falls bereits ein version-Feld existiert, ersetzen wir es. Andernfalls fügen wir es ein.
           if grep -q "^[[:space:]]*version:" "$FILE"; then
             sed -i 's/^\([[:space:]]*version:[[:space:]]*"\)[^"]*\(".*\)/\1'${NEW_VERSION}'\2/' "$FILE"
           else
@@ -40,16 +40,11 @@ jobs:
           fi
           echo "Updated version in $FILE to ${NEW_VERSION}"
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - name: Build Firmware with ESPHome Build Action
+        uses: esphome/build-action@v6
         with:
-          python-version: "3.x"
-
-      - name: Install ESPHome
-        run: pip install esphome
-
-      - name: Build Firmware
-        run: esphome curea-battery-monitor.yaml run --no-upload
+          yaml_file: curea-battery-monitor.yaml
+          complete_manifest: true
 
       - name: Create GitHub Release
         id: create_release

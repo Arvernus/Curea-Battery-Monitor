@@ -15,12 +15,18 @@ logger:
 api:
 
 ota:
-  - platform: esphome
+  - platform: http_request
 
 wifi:
   ap:
 
 captive_portal:
+
+update:
+  - platform: http_request
+    name: "Firmware Update"
+    source: "https://github.com/Arvernus/Curea-Battery-Monitor/releases/latest/download/manifest.json"
+    update_interval: 1h
 
 one_wire:
   - platform: gpio

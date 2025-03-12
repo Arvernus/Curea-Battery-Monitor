@@ -45,3 +45,7 @@ sensor:
     name: Außentemperatur
   - platform: dallas_temp
     name: Innenraumtemperatur
+
+button:
+  - platform: restart
+    name: "Restart"

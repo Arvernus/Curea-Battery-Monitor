@@ -2,8 +2,6 @@ esphome:
   name: curea-battery-monitor
   friendly_name: "Curea Battery Monitor"
   name_add_mac_suffix: true
-  # Diese Version wird automatisch per GitHub Actions aktualisiert.
-  version: "0.0.0"
 
 esp32:
   board: wemos_d1_mini32

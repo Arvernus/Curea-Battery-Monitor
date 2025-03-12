@@ -28,7 +28,7 @@ http_request:
 update:
   - platform: http_request
     name: "Firmware Update"
-    source: "https://github.com/Arvernus/Curea-Battery-Monitor/releases/latest/download/manifest.json"
+    source: "https://github.com/Arvernus/Curea-Battery-Monitor/releases/latest/download/curea-battery-monitor.manifest.json"
     update_interval: 1h
 
 one_wire:

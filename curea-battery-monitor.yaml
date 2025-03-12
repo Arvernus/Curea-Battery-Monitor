@@ -22,6 +22,8 @@ wifi:
 
 captive_portal:
 
+http_request:
+
 update:
   - platform: http_request
     name: "Firmware Update"

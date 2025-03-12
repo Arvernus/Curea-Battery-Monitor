@@ -34,3 +34,14 @@ update:
 one_wire:
   - platform: gpio
     pin: D2
+
+status_led:
+  pin:
+    number: GPIO2
+    inverted: true
+
+sensor:
+  - platform: dallas_temp
+    name: Außentemperatur
+  - platform: dallas_temp
+    name: Innenraumtemperatur

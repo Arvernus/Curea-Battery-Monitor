@@ -3,7 +3,7 @@ esphome:
   friendly_name: "Curea Battery Monitor"
   name_add_mac_suffix: true
   project:
-    name: "curea-battery-monitor"
+    name: "Arvernus.Curea-Battery-Monitor"
     version: "1.0.3"
 
 esp32:
